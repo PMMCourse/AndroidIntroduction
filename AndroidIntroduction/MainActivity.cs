@@ -13,41 +13,31 @@ namespace AndroidIntroduction
     public class MainActivity : AppCompatActivity
     {
 
+        private Button _buttonChangeName;
+        private TextView _labelChangedName;
+        private EditText _editTextForName;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.activity_main);
+            SetContentView(Resource.Layout.content_main);
 
-            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
-            SetSupportActionBar(toolbar);
-
-            FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
-            fab.Click += FabOnClick;
+            AddBindForLayout();
+                        
         }
 
-        public override bool OnCreateOptionsMenu(IMenu menu)
+        private void AddBindForLayout()
         {
-            MenuInflater.Inflate(Resource.Menu.menu_main, menu);
-            return true;
+            _buttonChangeName = FindViewById<Button>(Resource.Id.buttonChangeName);
+            _labelChangedName = FindViewById<TextView>(Resource.Id.labelForName);
+            _editTextForName = FindViewById<EditText>(Resource.Id.editTextName);
+
+            _buttonChangeName.Click += ChangeNameClick;
         }
 
-        public override bool OnOptionsItemSelected(IMenuItem item)
-        {
-            int id = item.ItemId;
-            if (id == Resource.Id.action_settings)
-            {
-                return true;
-            }
-
-            return base.OnOptionsItemSelected(item);
-        }
-
-        private void FabOnClick(object sender, EventArgs eventArgs)
-        {
-            View view = (View) sender;
-            Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
-                .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
-        }
+        private void ChangeNameClick(object sender, EventArgs e)
+            => _editTextForName.Text = _labelChangedName.Text;
+        
 	}
 }
 

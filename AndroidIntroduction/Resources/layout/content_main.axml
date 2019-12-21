@@ -7,10 +7,31 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_main">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Hello World!" />
+    <LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:layout_marginLeft="8dp"
+		android:layout_marginRight="8dp">
+		
+		<EditText
+			android:id="@+id/editTextName"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"/>
+
+		<Button				
+			android:id="@+id/buttonChangeName"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="Press me"/>
+
+		<TextView
+			android:id="@+id/labelForName"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"			
+			android:textColor="@drawable/abc_ic_star_black_16dp"/>
+
+
+	</LinearLayout>
 
 </RelativeLayout>
