@@ -41,4 +41,19 @@
 		android:layout_height="wrap_content"									
 		android:text="Second Activity"/>
 
+
+	<Button
+		android:id="@+id/buttonNavigateListSample"
+		android:layout_below="@id/buttonNavigateSecondActivity"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="List sample"/>
+
+	<Button
+		android:id="@+id/buttonUseCamera"
+		android:layout_below="@+id/buttonNavigateListSample"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="Use camera"/>
+
 </RelativeLayout>

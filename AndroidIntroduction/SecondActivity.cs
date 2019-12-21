@@ -15,11 +15,30 @@ namespace AndroidIntroduction
     [Activity(Label = "SecondActivity")]
     public class SecondActivity : Activity
     {
+        private Button _buttonCreateFragment;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.secondActivityLayout);
-            // Create your application here
+
+            BindLayout();
+
+
+        }
+
+        private void BindLayout()
+        {
+            _buttonCreateFragment = FindViewById<Button>(Resource.Id.buttonCreateFragment);
+
+            _buttonCreateFragment.Click += CreateFragment;
+        }
+
+        private void CreateFragment(object sender, EventArgs e)
+        {
+            FragmentManager.BeginTransaction()
+                .Replace(Resource.Id.contentFragment, new FragmentSample())
+                .Commit();
         }
     }
 }
