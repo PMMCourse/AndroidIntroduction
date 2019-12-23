@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Adapters\UserAdapter.cs" />
     <Compile Include="CameraActivity.cs" />
+    <Compile Include="FilesActivity.cs" />
     <Compile Include="FragmentSample.cs" />
     <Compile Include="ListSampleActivity.cs" />
     <Compile Include="MainActivity.cs" />
@@ -132,6 +133,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\SettingsLayout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\FilesLayout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

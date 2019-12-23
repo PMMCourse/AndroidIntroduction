@@ -23,6 +23,7 @@ namespace AndroidIntroduction
         private Button _buttonUseCamera;
         private Button _buttonPermissions;
         private Button _buttonSettings;
+        private Button _buttonFiles;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -39,15 +40,16 @@ namespace AndroidIntroduction
             _editTextForName = FindViewById<EditText>(Resource.Id.editTextName);
             _navigateSecondActivity = FindViewById<Button>(Resource.Id.buttonNavigateSecondActivity);
             _buttonListSample = FindViewById<Button>(Resource.Id.buttonNavigateListSample);
-            _buttonUseCamera = FindViewById<Button>(Resource.Id.buttonUseCamera);
-            _buttonPermissions = FindViewById<Button>(Resource.Id.buttonPermission);
+            _buttonUseCamera = FindViewById<Button>(Resource.Id.buttonUseCamera);            
             _buttonSettings = FindViewById<Button>(Resource.Id.buttonSettings);
+            _buttonFiles = FindViewById<Button>(Resource.Id.buttonFiles);
 
             _buttonChangeName.Click += ChangeNameClick;
             _navigateSecondActivity.Click += NavigateSecondActivityClick;
             _buttonListSample.Click += NavigateListSample;
             _buttonUseCamera.Click += UseCamera;
             _buttonSettings.Click += NavigateSettings;
+            _buttonFiles.Click += NavigateFiles;
         }
         
         private void NavigateSecondActivityClick(object sender, EventArgs e)
@@ -75,6 +77,13 @@ namespace AndroidIntroduction
         {
             Intent navigateIntent = new Intent(this, typeof(SettingsActivity));
             StartActivity(navigateIntent);
+        }
+
+        private void NavigateFiles(object sender, EventArgs e)
+        {
+            Intent navigateIntent = new Intent(this, typeof(FilesActivity));
+            StartActivity(navigateIntent);
+
         }
 
     }
