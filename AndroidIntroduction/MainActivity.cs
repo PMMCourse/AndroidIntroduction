@@ -21,14 +21,14 @@ namespace AndroidIntroduction
         private Button _navigateSecondActivity;
         private Button _buttonListSample;
         private Button _buttonUseCamera;
+        private Button _buttonPermissions;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.content_main);
 
-            AddBindForLayout();
-                        
+            AddBindForLayout();                        
         }
 
         private void AddBindForLayout()
@@ -39,13 +39,15 @@ namespace AndroidIntroduction
             _navigateSecondActivity = FindViewById<Button>(Resource.Id.buttonNavigateSecondActivity);
             _buttonListSample = FindViewById<Button>(Resource.Id.buttonNavigateListSample);
             _buttonUseCamera = FindViewById<Button>(Resource.Id.buttonUseCamera);
+            _buttonPermissions = FindViewById<Button>(Resource.Id.buttonPermission);
 
             _buttonChangeName.Click += ChangeNameClick;
             _navigateSecondActivity.Click += NavigateSecondActivityClick;
             _buttonListSample.Click += NavigateListSample;
             _buttonUseCamera.Click += UseCamera;
-        }
-        
+            _buttonPermissions.Click += NavigatePermissions;
+        }        
+
         private void NavigateSecondActivityClick(object sender, EventArgs e)
         {
             Intent navigateIntent = new Intent(this, typeof(SecondActivity));
@@ -64,6 +66,12 @@ namespace AndroidIntroduction
         private void UseCamera(object sender, EventArgs e)
         {
             Intent navigateIntent = new Intent(this, typeof(CameraActivity));
+            StartActivity(navigateIntent);
+        }
+
+        private void NavigatePermissions(object sender, EventArgs e)
+        {
+            Intent navigateIntent = new Intent(this, typeof(SettingsActivity));
             StartActivity(navigateIntent);
         }
 

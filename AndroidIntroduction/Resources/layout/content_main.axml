@@ -56,4 +56,11 @@
 		android:layout_height="wrap_content"
 		android:text="Use camera"/>
 
+	<Button
+		android:id="@+id/buttonPermission"
+		android:layout_below="@+id/buttonUseCamera"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="Permissions"/>
+
 </RelativeLayout>
