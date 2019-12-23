@@ -63,4 +63,11 @@
 		android:layout_height="wrap_content"
 		android:text="Settings"/>
 
+  <Button
+		android:id="@+id/buttonFiles"
+		android:layout_below="@+id/buttonSettings"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="Files"/>
+
 </RelativeLayout>
