@@ -10,7 +10,7 @@
     <LinearLayout
 		android:id="@+id/LayoutForActivity"
 		android:layout_width="match_parent"
-		android:layout_height="300dp"
+		android:layout_height="200dp"
 		android:orientation="vertical"
 		android:layout_marginLeft="8dp"
 		android:layout_marginRight="8dp">
@@ -57,10 +57,10 @@
 		android:text="Use camera"/>
 
 	<Button
-		android:id="@+id/buttonPermission"
+		android:id="@+id/buttonSettings"
 		android:layout_below="@+id/buttonUseCamera"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:text="Permissions"/>
+		android:text="Settings"/>
 
 </RelativeLayout>
