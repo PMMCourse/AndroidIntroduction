@@ -24,6 +24,7 @@ namespace AndroidIntroduction
         private Button _buttonPermissions;
         private Button _buttonSettings;
         private Button _buttonFiles;
+        private Button _buttonBBDD;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -43,6 +44,7 @@ namespace AndroidIntroduction
             _buttonUseCamera = FindViewById<Button>(Resource.Id.buttonUseCamera);            
             _buttonSettings = FindViewById<Button>(Resource.Id.buttonSettings);
             _buttonFiles = FindViewById<Button>(Resource.Id.buttonFiles);
+            _buttonBBDD = FindViewById<Button>(Resource.Id.buttonBBDD);
 
             _buttonChangeName.Click += ChangeNameClick;
             _navigateSecondActivity.Click += NavigateSecondActivityClick;
@@ -50,6 +52,7 @@ namespace AndroidIntroduction
             _buttonUseCamera.Click += UseCamera;
             _buttonSettings.Click += NavigateSettings;
             _buttonFiles.Click += NavigateFiles;
+            _buttonBBDD.Click += NavigateBBDD;
         }
         
         private void NavigateSecondActivityClick(object sender, EventArgs e)
@@ -83,7 +86,12 @@ namespace AndroidIntroduction
         {
             Intent navigateIntent = new Intent(this, typeof(FilesActivity));
             StartActivity(navigateIntent);
+        }
 
+        private void NavigateBBDD(object sender, EventArgs e)
+        {
+            Intent navigateIntent = new Intent(this, typeof(BBDDActivity));
+            StartActivity(navigateIntent);
         }
 
     }
